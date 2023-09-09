@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestra galería de proyectos destacados. Sumérgete en un mundo de creatividad y excelencia en diseño gráfico, diseño web y branding. ¡Nuestro trabajo habla por sí mismo!">
+    <meta name="keywords" content="diseño gráfico, diseño web, portafolio, trabajos anteriores, proyectos destacados, creatividad visual, ejemplos de diseño">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Proyectos | LOPEREZ</title>
+</head>
+<body>
+    <!-- Maquetado de Página -->
+    <div class="grid-container-projects">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar-desktop">
+                <div class="logo">
+                    <a href="../index.html">LOPEREZ</a>
+                </div>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./sobreNosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="#inicio-pagina">Proyectos</a></li>
+                </ul>
+                <div class="container-contactar">
+                    <a href="./contacto.html" class="action_btn contactar">Contactar</a>
+                </div>
+            </nav>
+            <!-- Navbar Responsive -->
+            <nav class="navbar">
+                <div class="brand">
+                    <a href="../index.html">LOPEREZ</a>
+                </div>
+                <div class="abrir-menu" id="abrir">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="links" id="links">
+                    <div class="cerrar-menu" id="cerrar">
+                        <div class="barra-1"></div>
+                        <div class="barra-2"></div>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="./sobreNosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="./servicios.html">Servicios</a></li>
+                        <li><a href="#inicio-pagina">Proyectos</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Main -->
+        <main class="main" id="inicio-pagina">
+            <section class="contenedor-proyectos">
+                <div class="proyectos">
+                    <h1 data-aos="fade-left" data-aos-duration="1000">Dedicación.</h1>
+                </div>
+            </section>
+        </main>
+        <!-- Proyectos -->
+        <section class="contenedor-proyec">
+            <div class="proyecto-1" data-aos="fade-right" data-aos-duration="1000">
+                <img src="../images/Loperez-Proyecto-1.png" alt="Tienda digital de la marca de ropa femenina Caromultistore">
+                <div class="hover-proyecto">
+                    <p>Tienda Digital</p>
+                    <h2>Caromultistore</h2>
+                    <h3>Ropa Femenina</h3>
+                    <div class="ir-ahora">
+                        <a href="#" target="_blank" class="action_btn">Ir ahora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="proyecto-2" data-aos="fade-left" data-aos-duration="1000">
+                <img src="../images/Loperez-proyecto-2.png" alt="Tienda digital de productos de skincare y maquillaje de la Dra.Krys">
+                <div class="hover-proyecto">
+                    <p>Tienda Digital</h>
+                    <h2>Dra. Krys</h2>
+                    <h3>Productos de skincare</h3>
+                    <div class="ir-ahora">
+                        <a href="#" target="_blank" class="action_btn">Ir ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer class="footer-grid">
+            <section class="footer">
+                <div class="footer-top">
+                    <ul>
+                        <li class="footer-email">
+                            <a href="mailto:aalopezp2000@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="footer-whatsapp">
+                            <a href="https://wa.me/+591166670048" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li class="footer-instagram">
+                            <a href="https://www.instagram.com/adrianlolopez" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="footer-bottom">
+                <div class="linea-footer"></div>
+                <p>&copy; 2023 LOPEREZ. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Javascript -->
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Scroll Header -->
+    <script>
+        window.addEventListener("scroll", function() {
+    const header = document.querySelector(".header");
+    const scrollPosition = window.scrollY;
+
+    if (window.innerWidth > 100) { 
+        if (scrollPosition > 0) {
+            header.style.backgroundColor = "#000";
+        } else {
+            header.style.backgroundColor = "transparent";
+        }
+    } else {
+        header.style.backgroundColor = "transparent";
+    }
+    });
+    </script>
+    <!-- Menú Hamburguesa Funcional -->
+    <script>
+        const links = document.querySelector("#links");
+        const abrir = document.querySelector("#abrir");
+        const cerrar = document.querySelector("#cerrar");
+    
+        abrir.addEventListener("click", () => {
+            links.classList.add("visible");
+        })
+    
+        cerrar.addEventListener("click", () => {
+            links.classList.remove("visible");
+        })
+        
+    </script>
+</body>
+</html>

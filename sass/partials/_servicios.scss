@@ -1,0 +1,311 @@
+// Variables
+$sizeS: 1rem;
+$sizeM: 2rem;
+$sizeL: 3rem;
+$sizeXL: 4rem;
+$sizeXXL: 9rem;
+$colorW: white;
+$colorB: #010101;
+$f-direc: column;
+$font-bolder: bolder;
+$letter: 1px;
+$border: 3px solid white;
+@mixin hover{
+    background-color: #ffd2da;
+    transition: 0.3s ease;
+}
+@mixin not-hover{
+    background-color: rgba(0, 0, 0, 0.091);
+    transition: 0.3s ease;
+}
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin backg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include d-center;
+}
+@mixin shadow{
+    background-color: #00000003;
+    box-shadow: 0 0 17px #7f555c63;
+    backdrop-filter: blur(2px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+@mixin filter{
+    background-color: #ffffffb7;
+    box-shadow: 0 0 20px #7f555c90;
+    backdrop-filter: blur(2px);
+}
+// Nesting
+.grid-container-services{
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "container-identidad-diseño"
+        "footer-grid";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    .main{
+        grid-area: main;
+        width: 100%;
+        min-height: 700px;
+        background: url(../images/Pink-Lifeguard-Tower.png);
+        @include backg-image;
+        justify-content: start;
+        .servicios{
+            h1{
+                font-size: $sizeXL + 1.5rem;
+                margin-top: 288px;
+                margin-left: 40px;
+                font-weight: $font-bolder;
+                color: $colorW;
+            }
+        }
+    }
+    .container-identidad-diseño{
+        grid-area: container-identidad-diseño;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $colorB;
+        overflow: hidden;
+        .contenedor-identidad-diseño{
+            width: 100%;
+            background: url(../images/Fondo-Servicios.png);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 0;
+            .container-identidad{
+                display: flex;
+                justify-content: space-between;
+                .identidad{
+                    display: inline-block;
+                    margin-top: 70px;
+                    @include shadow;
+                    padding: 30px 80px;
+                    h2{
+                        color: $colorW;
+                        font-size: $sizeXL + 0.5rem;
+                        font-weight: $font-bolder;
+                        margin-top: 10px;
+                    }
+                    .linea-identidad{
+                        width: 115px;
+                        border-bottom: $border;
+                    }
+                    p{
+                        color: $colorW;
+                        margin-top: 40px;
+                        font-size: $sizeM + 0.2rem;
+                    }
+                    .botones-servicios{
+                        .action_btn{
+                            font-size: $sizeS + 0.5rem;
+                            padding: 12px 20px;
+                            margin-top: 10px;
+                            display: inline-block;
+                            color: $colorW;
+                            border-radius: 50px;
+                            &:hover{
+                                @include hover;
+                            }
+                            &:not(:hover){
+                                @include not-hover;
+                            }
+                        }
+                    }
+                }
+                .logo-loperez{
+                    img{
+                        width: 340px;
+                        margin-top: 60px;
+                        margin-right: 115px;
+                    }
+                }
+            }
+            .container-diseño{
+                display: flex;
+                justify-content: space-between;
+                .contenedor-diseño{
+                    width: 100%;
+                    min-height: 550px;
+                    padding: 0;
+                    img{
+                        display: none;
+                    }
+                    .contenedor-diseño-texto{
+                        display: inline-block;
+                        margin-top: 180px;
+                        @include shadow;
+                        padding: 45px 80px;
+                        h2{
+                            color: $colorW;
+                            font-size: $sizeXL + 0.5rem;
+                            font-weight: $font-bolder;
+                            margin-top: -10px;
+                        }
+                        .linea-diseño{
+                            width: 138px;
+                            border-bottom: $border;
+                        }
+                        p{
+                            color: $colorW;
+                            font-size: $sizeM + 0.2rem;
+                            margin-top: 45px;
+                        }
+                        .botones-servicios{
+                            .action_btn{
+                                font-size: $sizeS + 0.5rem;
+                                padding: 12px 20px;
+                                margin-top: 15px;
+                                display: inline-block;
+                                color: $colorW;
+                                border-radius: 50px;
+                                &:hover{
+                                    @include hover;
+                                }
+                                &:not(:hover){
+                                    @include not-hover;
+                                }
+                            }
+                        }
+                    }
+                }
+                .diseño-loperez{
+                    img{
+                        width: 340px;
+                        margin-top: 115px;
+                        margin-right: 110px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 414px){
+    .grid-container-services{
+        .main{
+            background: url(../images/Pink-Lifeguard-Tower-Mobile.png);
+            @include backg-image;
+            .servicios{
+                h1{
+                    margin-top: -30px;
+                    font-size: $sizeM + 0.5rem;
+                    padding: 30px 30px 30px 55px;
+                    margin-right: 80px;
+                    margin-left: -25px;
+                    background-color: #01010100;
+                    box-shadow: 0 0 20px rgba(65, 33, 58, 0.308);
+                    backdrop-filter: blur(5px); 
+                    border-radius: 20px;
+                }
+            }
+        }
+        .container-identidad-diseño{
+            .contenedor-identidad-diseño{
+                background: url(../images/Fondo-Servicios-Mobile.png);
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                .container-identidad{
+                    @include d-center;
+                    flex-direction: $f-direc;
+                    .identidad{
+                        margin: 60px;
+                        padding: 30px;
+                        border-radius: 20px;
+                        align-items: center;
+                        justify-content: center;
+                        h2{
+                            font-size: $sizeL + 0.5rem;
+                        }
+                        .linea-identidad{
+                            width: 90px;
+                            border-bottom: $border;
+                        }
+                        p{
+                            margin-top: 35px;
+                            margin-bottom: 8px;
+                            font-size: $sizeS + 0.5rem;
+                        }
+                        .botones-servicios{
+                            .action_btn{
+                                font-size: $sizeS + 0.3rem;
+                                padding: 12px 15px;
+                                margin-top: 8px;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                    .logo-loperez{
+                        @include filter;
+                        border-radius: 20px;
+                        margin: 0;
+                        margin-top: -43px;
+                        padding: 20px 0;
+                        img{
+                            margin: 30px 40px;
+                            width: 180px;
+                        }
+                    }
+                }
+                .container-diseño{
+                    flex-direction: $f-direc;
+                    .contenedor-diseño{
+                        @include d-center;
+                        flex-direction: $f-direc;
+                        img{
+                            display: block;
+                        }
+                        .contenedor-diseño-texto{
+                            @include shadow;
+                            margin: 60px 60px;
+                            margin-top: 48px;
+                            padding: 45px 30px 40px 30px;
+                            border-radius: 20px;
+                            align-items: center;
+                            justify-content: center;
+                            h2{
+                                font-size: $sizeL + 0.5rem;
+                            }
+                            .linea-diseño{
+                                width: 108px;
+                                border-bottom: $border;
+                            }
+                            p{
+                                margin-top: 40px;
+                                font-size: $sizeS + 0.5;
+                            }
+                            .botones-servicios{
+                                .action_btn{
+                                    font-size: $sizeS + 0.3rem;
+                                    padding: 12px 15px;
+                                    margin-top: 15px;
+                                }
+                            }
+                        }
+                    }
+                    .diseño-loperez{
+                        @include filter;
+                        border-radius: 20px;
+                        margin: 50px 60px;
+                        padding: 20px 30px 20px 40px; 
+                        margin-top: -82px;
+                        margin-bottom: 60px;
+                        img{
+                            margin: 0;
+                            padding: 0;
+                            width: 180px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+//variables
+$sizeS: 1rem;
+$sizeM: 2rem;
+$sizeL: 3rem;
+$sizeXL: 4rem;
+$color-gray: rgb(72, 72, 72);
+$f-direc: column;
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// Nesting
+.footer-grid{
+    grid-area: footer-grid;
+    max-width: 1400px;
+    background-color: #010101;
+    .footer{
+        width: 100%;
+        padding: 0;
+        margin-top: 15px;
+        .footer-top{
+            ul{
+                gap: $sizeS;
+                @include d-center;
+                li{
+                    i{
+                        font-size: $sizeM;
+                        color: $color-gray;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom{
+        margin-top: 10px;
+        margin-bottom: 5px;
+        @include d-center;
+        flex-direction: $f-direc;
+        .linea-footer{
+            border-bottom: 1px solid $color-gray;
+            width: 120px;
+            margin-bottom: 12px;
+        }
+        p{
+            font-size: $sizeS + 0.2rem;
+            color: $color-gray;
+            margin-bottom: 5px;
+        }
+    }
+}
+@media (max-width: 414px){
+    .footer-grid{
+        .footer-bottom{
+            p{
+                font-size: $sizeS;
+            }
+        }
+    }
+}

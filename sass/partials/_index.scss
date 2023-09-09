@@ -1,0 +1,314 @@
+//variables
+$sizeS: 1rem;
+$sizeM: 2rem;
+$sizeL: 3rem;
+$sizeXL: 4rem;
+$sizeXXL: 9rem;
+$colorW: white;
+$colorB: #010101;
+$f-direc: column;
+$font-bolder: bolder;
+$letter: 1px;
+@mixin hover{
+    background-color: #ffd2da;
+    transition: 0.3s ease;
+}
+@mixin not-hover{
+    background-color: rgba(128, 128, 128, 0.703);
+    transition: 0.3s ease;
+}
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin backg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include d-center;
+}
+// Nesting
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "enfoque-porque"
+        "footer-grid";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    .main {
+        grid-area: main;
+        @include d-center;
+        flex-direction: $f-direc;
+        background-color: $colorB;
+        overflow-x: hidden;
+        .contenedor {
+            width: 100%;
+            min-height: 700px;
+            background: url(../images/beach.png);
+            @include backg-image;
+            color: $colorW;
+            .principal{
+                margin-top: -20px;
+                background-color: #01010126;
+                box-shadow: 0 0 40px rgba(17, 10, 0, 0.824);
+                backdrop-filter: blur(50px); 
+                padding: 50px;
+                border-radius: 50px;
+                h1 {
+                    margin-top: -20px;
+                    font-size: $sizeXXL;
+                    font-weight: $font-bolder;
+                }
+                .linea-bienvenidos{
+                    width: 173px;
+                    border-bottom: 4px solid $colorW;
+                }
+                p {
+                    margin: 10px 0;
+                    font-size: $sizeM + 0.5rem;
+                    color: $colorW;
+                }
+                .botones{
+                    margin-top: 30px;
+                    text-align: center;
+                    margin-right: 195px;
+                    cursor: pointer;
+                    .action_btn {
+                        padding: 12px 20px;
+                        font-size: $sizeS + 0.5rem;
+                        border-radius: 50px;
+                        color: $colorW;
+                        margin-left: 5px;
+                        &:hover{
+                            @include hover;
+                        }
+                        &:not(:hover){
+                            @include not-hover;
+                        }
+                    }
+                }
+            }
+            .boton-contactar{
+                display: none;
+            }
+        }
+    }
+    .enfoque-porque{
+        grid-area: enfoque-porque;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $colorB;
+        overflow: hidden;
+        .contenedor-enfoque {
+            flex-wrap: wrap;
+            flex: 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $colorB;
+            .imagen{
+                flex: 1;
+                @include d-center;
+                height: 400px;
+                img {
+                    height: 400px;
+                    max-width: 600px;
+                }
+            }
+            .enfoque-imagen{
+                display: none;
+            }
+            .enfoque {
+                flex: 1;
+                display: flex;
+                flex-direction: $f-direc;
+                padding-bottom: 30px;
+                color: $colorW;
+                h2 {
+                    margin-bottom: 5px;
+                    color: white;
+                    font-size: $sizeXL + 1rem;
+                    font-weight: $font-bolder;
+                }
+                .linea-enfoque {
+                    width: 103px;
+                    border-bottom: 3px solid white;
+                }
+                p {
+                    color: white;
+                    font-size: 1.8rem;
+                    margin-top: 20px;
+                    br{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .contenedor-porque{
+            flex: 1;
+            max-width: 100%;
+            min-height: 680px;
+            background: url(../images/Porque-nosotros.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0;
+            display: flex;
+            justify-content: start;
+            .contenedor-texto{
+                width: 550px;
+                height: 250px;
+                padding-right: 30px;
+                @include d-center;
+                flex-direction: $f-direc;
+                margin-top: 160px;
+                color: rgb(230, 230, 230);
+                background-color: #01010127;
+                box-shadow: 0 0 20px rgba(6, 3, 0, 0.824);
+                backdrop-filter: blur(10px); 
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                h3{
+                    font-size: $sizeXL;
+                    display: inline;
+                    font-weight: $font-bolder;
+                }
+                .linea-nosotros{
+                    width: 160px;
+                    border-bottom: 3px solid rgb(230, 230, 230);
+                    margin-left: 150px;
+                }
+                .texto-porque{
+                    p{  
+                        margin-top: 40px;
+                        font-size: $sizeS + 0.8rem;
+                        color: rgb(230, 230, 230);
+                        br{
+                            display: none;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}
+// Responsive
+@media (max-width: 414px){
+    .grid-container{
+        .main{
+            .contenedor{
+                background: url(/images/Inicio-Mobile.png);
+                height: 100vh;
+                @include backg-image;
+                flex-direction: $f-direc;
+                justify-content: space-evenly;
+                .principal{
+                    width: 80vw;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 30px;
+                    margin-top: 40px;
+                    backdrop-filter: blur(10px); 
+                    h1{
+                        margin-top: 10px;
+                        font-size: $sizeXL + 0.5rem;
+                    }
+                    p{
+                        margin-top: 50px;
+                        font-size: $sizeS + 0.5rem;
+                        letter-spacing: $letter;
+                    }
+                    .botones{
+                        display: none;
+                    }
+                }
+                .boton-contactar{
+                    display: block;
+                    cursor: pointer;
+                    margin-top: -40px;
+                    .action_btn {
+                        padding: 12px 20px;
+                        font-size: $sizeS + 0.5rem;
+                        border-radius: 50px;
+                        color: $colorW;
+                        box-shadow: 0 0 30px rgba(17, 10, 0, 0.427);
+                        &:hover{
+                            @include hover;
+                        }
+                        &:not(:hover){
+                            background-color: #f7c5cd;
+                            transition: 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}
+@media (max-width: 414px){
+    .grid-container{
+        .enfoque-porque{
+            .contenedor-enfoque{
+                flex-wrap: wrap-reverse;
+                .imagen{
+                    width: 100vw;
+                }
+                .enfoque{
+                    position: absolute;
+                    padding: $sizeXL + 1rem;
+                    margin-top: -100px;
+                    h2{
+                        font-size: $sizeL;
+                    }
+                    .linea-enfoque{
+                        width: 60px;
+                        border-bottom: 2px solid white;
+                        margin-top: -4px;
+                    }
+                    p{
+                        margin-top: 70px;
+                        margin-left: 150px;
+                        font-size: $sizeS + 0.5rem;
+                        letter-spacing: $letter;
+                        br {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .contenedor-porque{
+                justify-content: center;
+                .contenedor-texto{
+                    width: 80vw;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 20px;
+                    border-top-right-radius: 20px;
+                    border-bottom-right-radius: 20px;
+                    padding: 10px;
+                    h3{
+                        font-size: $sizeM + 0.8rem;
+                    }
+                    .linea-nosotros{
+                        width: 115px;
+                        margin-top: 2px;
+                        margin-right: 45px;
+                        border-bottom: 2px solid white;
+                    }
+                    .texto-porque{
+                        p{
+                            font-size: $sizeS + 0.5rem;
+                            letter-spacing: $letter;
+                            br{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

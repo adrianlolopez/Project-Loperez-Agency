@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En el corazón de nuestra compañía web, fusionamos creatividad y experiencia para dar vida a tu visión. Conoce al equipo detrás de nuestros exitosos diseños gráficos, proyectos web y estrategias de marca. Somos tu socio digital de confianza.">
+    <meta name="keywords" content="diseñadores gráficos, experiencia digital, equipo profesional, creatividad, estrategias de marca, proyectos web, socios digitales.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Nosotros | LOPEREZ</title>
+</head>
+<body>
+    <!-- Maquetado de página -->
+    <div class="grid-container-nosotros">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar-desktop">
+                <div class="logo">
+                    <a href="../index.html">LOPEREZ</a>
+                </div>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="#inicio-pagina">Sobre Nosotros</a></li>
+                    <li><a href="./servicios.html">Servicios</a></li>
+                    <li><a href="./proyectos.html">Proyectos</a></li>
+                </ul>
+                <div class="container-contactar">
+                    <a href="./contacto.html" class="action_btn contactar">Contactar</a>
+                </div>
+            </nav>
+            <!-- Navbar Responsive -->
+            <nav class="navbar">
+                <div class="brand">
+                    <a href="../index.html">LOPEREZ</a>
+                </div>
+                <div class="abrir-menu" id="abrir">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="links" id="links">
+                    <div class="cerrar-menu" id="cerrar">
+                        <div class="barra-1"></div>
+                        <div class="barra-2"></div>
+                    </div>
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="#inicio-pagina">Sobre Nosotros</a></li>
+                        <li><a href="./servicios.html">Servicios</a></li>
+                        <li><a href="./proyectos.html">Proyectos</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Main -->
+        <main class="main" id="inicio-pagina">
+            <div class="somos">
+                <h1 data-aos="fade-left" data-aos-duration="1500">Somos FAMILIA.</h1>
+            </div>
+        </main>
+        <!-- Sobre Nosotros -->
+        <section class="contenedor-article-somos">
+            <article class="texto-somos" data-aos="fade-down" data-aos-duration="1500">
+                <div class="texto-p">
+                    <p>
+                        "Somos una empresa familiar venezolana con pasión por el diseño. Nuestra dedicación profesional nos impulsa a crear soluciones visuales impactantes y efectivas para nuestros clientes, reflejando la esencia de cada proyecto con creatividad y excelencia".
+                    </p>
+                </div>
+                <div class="contenedor-sobrenosotros">
+                    <div class="carrusel-sobre">
+                        <div class="imagen-sobre">
+                            <img src="../images/Diseñador-web.png" alt="Imagen de Diseñador Web Adrián López">
+                            <p>Diseñador Web</p>
+                        </div>
+                        <div class="imagen-sobre">
+                            <img src="../images/Diseñador-grafico.jpeg" alt="Imagen de Diseñador Gráfico Reinaldo López">
+                            <p>Diseñador Gráfico</p>
+                        </div>
+                        <div class="imagen-sobre">
+                            <img src="../images/Editora-video.png" alt="Imagen de Editora de Vídeo Geraldine Pérez">
+                            <p>Editora de Vídeo</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- Footer -->
+        <footer class="footer-grid">
+            <section class="footer">
+                <div class="footer-top">
+                    <ul>
+                        <li class="footer-email">
+                            <a href="mailto:aalopezp2000@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="footer-whatsapp">
+                            <a href="https://wa.me/+591166670048" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </li>
+                        <li class="footer-instagram">
+                            <a href="https://www.instagram.com/adrianlolopez" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <div class="footer-bottom">
+                <div class="linea-footer"></div>
+                <p>&copy; 2023 LOPEREZ. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Javascript -->
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Scroll Header -->
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".header");
+            const scrollPosition = window.scrollY;
+
+        if (window.innerWidth > 100) {
+        if (scrollPosition > 0) {
+            header.style.backgroundColor = "#000";
+        } else {
+            header.style.backgroundColor = "transparent";
+        }
+        } else {
+        header.style.backgroundColor = "transparent";
+        }
+    });
+    </script>
+    <!-- Carrusel Automático -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const imagenes = document.querySelectorAll('.imagen-sobre');
+        let indiceActual = 0;
+
+        function avanzar() {
+        imagenes[indiceActual].style.opacity = 0;
+        indiceActual = (indiceActual + 1) % imagenes.length;
+        imagenes[indiceActual].style.opacity = 1;
+        }
+
+        const intervalo = setInterval(avanzar, 3000);
+    });
+    </script>
+    <!-- Menú Hamburguesa Funcional -->
+<script>
+    const links = document.querySelector("#links");
+    const abrir = document.querySelector("#abrir");
+    const cerrar = document.querySelector("#cerrar");
+
+    abrir.addEventListener("click", () => {
+        links.classList.add("visible");
+    })
+
+    cerrar.addEventListener("click", () => {
+        links.classList.remove("visible");
+    })
+    
+</script>
+</body>
+</html>

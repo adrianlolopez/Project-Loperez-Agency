@@ -1,0 +1,194 @@
+//variables
+$sizeS: 1rem;
+$sizeM: 2rem;
+$sizeL: 3rem;
+$sizeXL: 4rem;
+$transition: 0.3s ease;
+$f-direc: column;
+@mixin hover{
+    border-bottom: 2px solid rgba(199, 199, 199, 0.616);
+    transition: $transition;
+}
+@mixin not-hover{
+    border-bottom: 2px solid transparent;
+    transition: $transition;
+}
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// Nesting
+.header {
+    grid-area: header;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 10px;
+    font-size: $sizeS + 0.5rem;
+    z-index: 100;
+    transition: background-color 0.5s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    .navbar-desktop{
+        min-height: 70px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .logo{
+            font-size: $sizeL;
+            font-weight: bold;
+            margin-left: -100px;
+            margin-bottom: 10px;
+            a{
+                color: white;
+                padding-bottom: 5px;
+            }        
+        }
+        ul{
+            display: flex;
+            gap: $sizeXL;
+            padding-right: 5px;
+            margin-left: 20px;
+            margin-bottom: 15px;
+            li{
+                a{
+                    color: white;
+                    padding-bottom: 5px;
+                    font-size: $sizeS + 0.7rem;
+                    &:hover{
+                        color: rgb(199, 199, 199);
+                        @include hover;
+                    }
+                    &:not(:hover){
+                        color: white;
+                        @include not-hover;
+                    }
+                }
+            }
+        }
+        .container-contactar{
+            .action_btn{
+                display: inline-block;
+                padding: 15px 25px;
+                color: white;
+                border-radius: 50px;
+                &:hover{
+                    background-color: #ffd2da;
+                    transition: $transition;
+                }
+                &:not(:hover){
+                    background-color: #ffc0cb;
+                    transition: $transition;
+                }
+            }
+            .contactar{
+                margin-right: -70px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    .navbar{
+        display: none;
+    }
+}
+
+// Responsive
+@media (max-width: 414px){
+    .header{
+        margin: 0;
+        padding: 0;
+        .navbar-desktop{
+            display: none;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            padding: $sizeM;
+            .brand {
+                a{
+                    font-size: $sizeM + 0.5rem;
+                    font-weight: bolder;
+                    color: white;
+                }
+            }
+            .abrir-menu {
+                display: block;
+                cursor: pointer;
+                .bar{
+                    width: 25px;
+                    height: 3px;
+                    background-color: white;
+                    margin: 5px 0;
+                    border-radius: 20px;
+                }
+            }
+            .links {
+                opacity: 0;
+                visibility: hidden;
+                display: flex;
+                position: absolute;
+                flex-direction: $f-direc;
+                align-items: end;
+                gap: $sizeL;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                background-color: black;
+                padding: $sizeL;
+                box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
+                transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+                .cerrar-menu {
+                    @include d-center;
+                    cursor: pointer;
+                    width: 25px;
+                    height: 25px;
+                    position: relative;
+                    .barra-1 {
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        border-radius: 10px;
+                        background-color: #ffffff; 
+                        transform: rotate(45deg);
+                    }
+                    .barra-2 {
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        border-radius: 10px;
+                        background-color: #ffffff; 
+                        transform: rotate(-45deg);
+                    }
+                }
+                .nav-list{
+                    display: flex;
+                    flex-direction: $f-direc;
+                    align-items: end;
+                    gap: $sizeL;
+                    li {
+                        a {
+                            font-size: $sizeS + 0.6rem;
+                            color: white;
+                            padding-bottom: 7px;
+                            &:hover{
+                                color: rgb(199, 199, 199);
+                                @include hover;
+                            }
+                            &:not(:hover){
+                                color: white;
+                                @include not-hover;
+                            }
+                        }
+                    }
+                }
+            }
+            .visible{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

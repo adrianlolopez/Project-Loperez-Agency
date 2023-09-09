@@ -1,0 +1,157 @@
+// Variables
+$sizeS: 1rem;
+$sizeM: 2rem;
+$sizeL: 3rem;
+$sizeXL: 4rem;
+$sizeXXL: 9rem;
+$colorW: white;
+$colorB: #010101;
+$f-direc: column;
+$font-bolder: bolder;
+$letter: 1px;
+@mixin d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin backg-image{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include d-center;
+}
+// Nesting
+.grid-container-nosotros{
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "contenedor-article-somos"
+        "footer-grid";
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    .main{
+        grid-area: main;
+        max-width: 100%;
+        height: 700px;
+        background: url(../images/Somos-Familia-Photo.png);
+        @include backg-image;
+        color: $colorW;
+        overflow: hidden;
+        .somos{
+            margin-left: 800px;
+            margin-bottom: 6px;
+            h1{
+                font-size: $sizeXL + 2.5rem;
+                font-weight: $font-bolder;
+            }
+        }
+    }
+    .contenedor-article-somos{
+        grid-area: contenedor-article-somos;
+        max-width: 100%;
+        height: 610px;
+        background: url(../images/Somos-nosotross.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        .texto-somos{
+            @include d-center;
+            flex-direction: $f-direc;
+            padding: 0;
+            background-color: transparent;
+            .texto-p{
+                background-color: #0000001f;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.831);
+                width: 700px;
+                padding: 45px 60px;
+                padding-bottom: 280px;
+                border-bottom-left-radius: 500px;
+                border-bottom-right-radius: 500px;
+                display: flex;
+                align-items: center;
+                p{
+                    text-align: center;
+                    font-size: $sizeS + 0.8rem;
+                    color: $colorW;
+                }
+            }
+            .contenedor-sobrenosotros {
+                @include d-center;
+                background-color: transparent;
+                margin: -240px 0;
+                position: relative;
+                .carrusel-sobre{
+                    display: flex;
+                    position: relative;
+                    .imagen-sobre {
+                        @include d-center;
+                        text-align: center;
+                        flex-direction: $f-direc;
+                        transition: opacity 2s ease;
+                        &:not(:first-child){
+                            opacity: 0;
+                            position: absolute;
+                        }
+                        img {
+                            width: 160px;
+                            height: 160px;
+                            border-radius: 50%;
+                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.604);
+                        }
+                        p {
+                            margin-top: 10px;
+                            color: $colorW;
+                            font-size: $sizeS + 0.5rem;
+                            font-weight: $font-bolder;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 414px){
+    .grid-container-nosotros{
+        .main{
+            .somos{
+                h1{
+                    padding: 25px;
+                    font-size: $sizeXL;
+                    margin-top: 20px;
+                    margin-left: -550px;
+                    background-color: #01010127;
+                    box-shadow: 0 0 20px rgba(6, 3, 0, 0.824);
+                    backdrop-filter: blur(5px); 
+                    border-radius: 20px;
+                }
+            }
+        }
+        .contenedor-article-somos{
+            .texto-somos{
+                .texto-p{
+                    width: 300px;
+                    height: 500px;
+                    padding: 40px;
+                    p{
+                        margin-top: -260px;
+                        font-size: $sizeS + 0.5rem;
+                        padding: 10px;
+                    }
+                }
+                .contenedor-sobrenosotros{
+                    .carrusel-sobre{
+                        margin-top: -10px;
+                        .imagen-sobre{
+                            p{
+                                font-size: $sizeS + 0.3rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
