@@ -13,6 +13,7 @@ $border: 3px solid white;
 @mixin hover{
     background-color: #ffd2da;
     transition: 0.3s ease;
+    color: $colorB;
 }
 @mixin not-hover{
     background-color: rgba(0, 0, 0, 0.091);

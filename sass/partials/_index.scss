@@ -12,6 +12,7 @@ $letter: 1px;
 @mixin hover{
     background-color: #ffd2da;
     transition: 0.3s ease;
+    color: $colorB;
 }
 @mixin not-hover{
     background-color: rgba(128, 128, 128, 0.703);
@@ -200,7 +201,7 @@ $letter: 1px;
     .grid-container{
         .main{
             .contenedor{
-                background: url(/images/Inicio-Mobile.png);
+                background: url(../images/Inicio-Mobile.png);
                 height: 100vh;
                 @include backg-image;
                 flex-direction: $f-direc;
@@ -231,9 +232,9 @@ $letter: 1px;
                     margin-top: -40px;
                     .action_btn {
                         padding: 12px 20px;
-                        font-size: $sizeS + 0.5rem;
+                        font-size: $sizeS + 0.4rem;
+                        letter-spacing: $letter;
                         border-radius: 50px;
-                        color: $colorW;
                         box-shadow: 0 0 30px rgba(17, 10, 0, 0.427);
                         &:hover{
                             @include hover;
@@ -241,6 +242,7 @@ $letter: 1px;
                         &:not(:hover){
                             background-color: #f7c5cd;
                             transition: 0.3s ease;
+                            color: $colorB;
                         }
                     }
                 }

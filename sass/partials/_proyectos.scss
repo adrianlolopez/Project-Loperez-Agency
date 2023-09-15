@@ -13,6 +13,7 @@ $border: 3px solid white;
 @mixin hover{
     background-color: #ffd2da;
     transition: 0.3s ease;
+    color: $colorB;
 }
 @mixin not-hover{
     background-color: rgba(0, 0, 0, 0.393);
@@ -206,8 +207,8 @@ $border: 3px solid white;
                         font-size: $sizeXL;
                         margin-top: -150px;
                         margin-left: 170px;
-                        background-color: #01010127;
-                        box-shadow: 0 0 20px rgba(6, 3, 0, 0.824);
+                        background-color: #0101010e;
+                        box-shadow: 0 0 20px rgba(86, 61, 2, 0.469);
                         backdrop-filter: blur(5px); 
                         border-bottom-left-radius: 20px;
                         border-top-left-radius: 20px;

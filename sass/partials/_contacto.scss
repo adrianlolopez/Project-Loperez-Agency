@@ -84,12 +84,14 @@ $letter: 1px;
             }
             .container-enviar{
                 .enviar {
-                    padding: 10px 25px;
-                    color: $colorW;
+                    padding: 10px 18px;
+                    color: black;
+                    font-weight: normal;
+                    letter-spacing: $letter;
                     border-radius: 50px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.546);
-                    font-size: $sizeS + 0.7rem;
-                    margin-left: 265px;
+                    font-size: $sizeS + 0.5rem;
+                    margin-left: 280px;
                     margin-top: -20px;
                     position: absolute;
                     &:hover{
@@ -129,7 +131,7 @@ $letter: 1px;
                 }
                 .container-enviar{
                     .enviar {
-                        padding: 8px 20px;
+                        padding: 8px 16px;
                         font-size: $sizeS + 0.5rem;
                         margin-left: 180px;
                     }
