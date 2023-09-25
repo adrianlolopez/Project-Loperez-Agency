@@ -55,13 +55,18 @@ $border: 3px solid white;
         @include backg-image;
         overflow: hidden;
         .contenedor-proyectos{
+            margin-left: auto;
             .proyectos{
                 h1{
-                    margin-left: 930px;
-                    margin-top: 222px;
+                    padding: 40px;
+                    margin-top: 60px;
                     color: $colorW;
                     font-size: $sizeXL + 2rem;
                     font-weight: $font-bolder;
+                    box-shadow: 0 0 20px rgba(108, 72, 0, 0.824);
+                    backdrop-filter: blur(3px); 
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
                 }
             }
         }
