@@ -15,7 +15,8 @@ $f-direc: column;
     grid-area: footer-grid;
     max-width: 1400px;
     background-color: #010101;
-    justify-content: center;
+    display: flex;
+    flex-direction: $f-direc;
     align-items: center;
     .footer{
         width: 100%;

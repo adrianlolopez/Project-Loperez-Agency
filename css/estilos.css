@@ -202,7 +202,8 @@ li {
   grid-area: footer-grid;
   max-width: 1400px;
   background-color: #010101;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .footer-grid .footer {
